@@ -31,12 +31,18 @@ public class Main {
             bigger = b;
         }
 
+        compress(smaller);
+        compress(bigger);
         nodes[find(smaller)] = find(bigger);
         return contained;
     }
 
-    static void compress(){
-
+    static void compress(int i){
+        while (nodes[i] != find(i)){
+            int temp = nodes[i];
+            nodes[i] = find(i);
+            i = temp;
+        }
     }
 
     static int find(int i){
