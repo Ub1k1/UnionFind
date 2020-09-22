@@ -50,7 +50,7 @@ public class Main {
     static ArrayList<Edge> minSpanTree(){
         ArrayList<Edge> tree = new ArrayList<>();
         for (int i = 0; i < 18; i++){
-            boolean contained = union(edges.peek().from, edges.peek().cost);
+            boolean contained = union(edges.peek().from, edges.peek().to);
             if (contained){
                 tree.add(edges.poll());
             }else{
